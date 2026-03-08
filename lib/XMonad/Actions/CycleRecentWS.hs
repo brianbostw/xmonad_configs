@@ -100,8 +100,7 @@ recentWS :: (WindowSpace -> Bool) -- ^ A workspace predicate.
          -> [WorkspaceId]
 recentWS p w = map tag
              $ filter p
-             $ map workspace (visible w)
-               ++ hidden w
+             $ map hidden w
                ++ [workspace (current w)]
 
 -- | Cycle through a finite list of workspaces with repeated presses of a key, while
